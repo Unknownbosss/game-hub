@@ -11,6 +11,7 @@ function App() {
   // const [selectedPlatform, setSelectedPlatform] = useState(null);
 
   const [gameQuery, setGameQuery] = useState({});
+  const onSearch = (searchText) => setGameQuery({ ...gameQuery, searchText });
   return (
     <Grid
       templateAreas={{
@@ -23,7 +24,7 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar onSearch={onSearch} />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
