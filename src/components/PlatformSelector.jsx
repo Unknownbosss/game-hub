@@ -3,17 +3,17 @@ import React from "react";
 import { BsChevronDown } from "react-icons/bs";
 import usePlatform from "../hooks/usePlatform";
 
-function PlatformSelector() {
+function PlatformSelector({setSelectedPlatform,selectedPlatform}) {
   const { data, error } = usePlatform();
   if (error) return null;
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Platform
+        {selectedPlatform?.name || 'Platform'}
       </MenuButton>
       <MenuList>
         {data.map((platform) => (
-          <MenuItem key={platform.id}>{platform.name}</MenuItem>
+          <MenuItem onClick={() => setSelectedPlatform(platform)} key={platform.id}>{platform.name}</MenuItem>
         ))}
       </MenuList>
     </Menu>
