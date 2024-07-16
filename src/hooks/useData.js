@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 
-function useData(endpoint) {
+function useData(endpoint, requestConfig, deps) {
 
     const [data, setData] = useState([]);
     const [error, setError] = useState("");
@@ -11,14 +11,14 @@ function useData(endpoint) {
     useEffect(() => {
         setLoading(true)
         const controller = new AbortController();
-        apiClient.get(endpoint, { signal: controller.signal })
+        apiClient.get(endpoint, { signal: controller.signal, ...requestConfig })
             .then((res) => setData(res.data.results)).catch(err => {
                 if (err instanceof CanceledError) return
                 setError(err.message)
             }).finally(() => setLoading(false));
 
         return () => controller.abort() 
-    }, []);
+    }, deps ? [...deps] : []);
 
     return { data, error, isLoading }
 }

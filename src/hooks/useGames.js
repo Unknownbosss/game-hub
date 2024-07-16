@@ -1,7 +1,7 @@
 import useData from "./useData";
 
-function useGames() {
-    return useData('/games')
+function useGames(selectedGenre) {
+    return useData('/games', { params: { genres: selectedGenre?.id } }, [selectedGenre?.id])
 }
 
 export default useGames
