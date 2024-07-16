@@ -6,7 +6,7 @@ import getCroppedImageUrl from "../services/image-url";
 function GameCard({ game }) {
   return (
     <Card>
-      <Image src={getCroppedImageUrl(game.background_image)} />
+      <Image src={getCroppedImageUrl(game.background_image)} height='235px'/>
       <CardBody>
         <Heading fontSize="2xl">{game?.name}</Heading>
         <HStack justifyContent="space-between">
