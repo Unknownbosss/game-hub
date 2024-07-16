@@ -25,8 +25,8 @@ function PlatFormIconList({ platforms }) {
   };
   return (
     <HStack marginY={1}>
-      {platforms.map((platform) => (
-        <Icon as={iconMap[platform.slug]} color="gray-500" />
+      {platforms.map((platform, i) => (
+        <Icon key={i} as={iconMap[platform.slug]} color="gray-500" />
       ))}
     </HStack>
   );

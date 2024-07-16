@@ -4,9 +4,8 @@ import CriticScore from "./CriticScore";
 import getCroppedImageUrl from "../services/image-url";
 
 function GameCard({ game }) {
-  console.log(getCroppedImageUrl(game.background_image));
   return (
-    <Card >
+    <Card>
       <Image src={getCroppedImageUrl(game.background_image)} />
       <CardBody>
         <Heading fontSize="2xl">{game?.name}</Heading>
