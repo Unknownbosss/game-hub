@@ -1,10 +1,10 @@
 import useData from "./useData";
 
-function useGames(selectedGenre, selectedPlatform) {
+function useGames(gameQuery) {
     return useData(
         "/games",
-        { params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id } },
-        [selectedGenre?.id, selectedPlatform?.id]
+        { params: { genres: gameQuery.genre?.id, platforms: gameQuery.platform?.id } },
+        [gameQuery]
     );
 }
 
