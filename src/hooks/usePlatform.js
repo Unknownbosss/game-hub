@@ -1,4 +1,3 @@
-import useData from "./useData"
 import platform from "../data/platform"
 
 function usePlatform() {
