@@ -1,7 +1,6 @@
-import useData from './useData';
-
+import genres from '../data/genres'
 function useGenre() {
-    return useData('/genres')
+    return { data: genres, isLoading: false, error: null }
 }
 
 export default useGenre 

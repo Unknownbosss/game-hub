@@ -1,7 +1,8 @@
 import useData from "./useData"
+import platform from "../data/platform"
 
 function usePlatform() {
-    return useData('/platforms/lists/parents')
+    return { data: platform, error: null }
 }
 
 export default usePlatform
