@@ -6,15 +6,15 @@ import getCroppedImageUrl from "../services/image-url";
 function GameCard({ game }) {
   return (
     <Card>
-      <Image src={getCroppedImageUrl(game.background_image)} height='235px'/>
+      <Image src={getCroppedImageUrl(game.background_image)} height="235px" />
       <CardBody>
-        <Heading fontSize="2xl">{game?.name}</Heading>
-        <HStack justifyContent="space-between">
+        <HStack justifyContent="space-between" marginBottom={3}>
           <PlatFormIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
           <CriticScore score={game.metacritic} />
         </HStack>
+        <Heading fontSize="2xl">{game?.name}</Heading>
       </CardBody>
     </Card>
   );
