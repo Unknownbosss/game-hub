@@ -3,7 +3,7 @@ import axios from "axios";
 const axiosInstance = axios.create({
     baseURL: 'https://api.rawg.io/api',
     params: {
-        key: import.meta.env.VITE_API_KEY
+        key: import.meta.env.VITE_API_KEY,
     }
 })
 
@@ -13,7 +13,8 @@ class APIClient {
     }
 
     getAll = (config) => {
-        return axiosInstance.get(this.endpoint, config)
+        const params = { ...axiosInstance.params, ...config }
+        return axiosInstance.get(this.endpoint, { params })
             .then(res => res.data)
     }
 }

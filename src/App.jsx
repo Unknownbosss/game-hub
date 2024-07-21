@@ -9,10 +9,11 @@ import GameHeading from "./components/GameHeading";
 
 function App() {
   // const [selectedGenre, setSelectedGenre] = useState(null);
-  // const [selectedPlatform, setSelectedPlatform] = useState(null);
+  // const [selectedPlatform, setSelectedPlatform] = useState(null); 08035492560
 
   const [gameQuery, setGameQuery] = useState({});
   const onSearch = (searchText) => setGameQuery({ ...gameQuery, searchText });
+  const onNext = (page) => setGameQuery({ ...gameQuery, page });
   return (
     <Grid
       templateAreas={{
@@ -55,7 +56,7 @@ function App() {
             />
           </Flex>
         </Box>
-        <GameGrid gameQuery={gameQuery} />
+        <GameGrid gameQuery={gameQuery} onNext={onNext}/>
       </GridItem>
     </Grid>
   );
