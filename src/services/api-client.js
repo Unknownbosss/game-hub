@@ -4,9 +4,6 @@ const axiosInstance = axios.create({
     baseURL: 'https://cors-anywhere.herokuapp.com/api.rawg.io/api',
     params: {
         key: import.meta.env.VITE_API_KEY,
-    },
-    headers: {
-        Origin: 'https://game-hub-reborn.vercel.com'
     }
 })
 
