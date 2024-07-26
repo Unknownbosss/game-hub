@@ -8,8 +8,6 @@ import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
 function App() {
-  // const [selectedGenre, setSelectedGenre] = useState(null);
-  // const [selectedPlatform, setSelectedPlatform] = useState(null); 08035492560
 
   const [gameQuery, setGameQuery] = useState({});
   const onSearch = (searchText) => setGameQuery({ ...gameQuery, searchText });
