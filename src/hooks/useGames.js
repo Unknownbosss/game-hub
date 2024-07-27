@@ -10,8 +10,8 @@ function useGames(gameQuery) {
         queryKey: ['games', gameQuery],
         queryFn: ({ pageParam = 1 }) =>
             apiClient.getAll({
-                genres: gameQuery.genre?.id,
-                parent_platforms: gameQuery.platform?.id,
+                genres: gameQuery.genreID,
+                parent_platforms: gameQuery.platformID,
                 ordering: gameQuery.sortOrder,
                 search: gameQuery.searchText,
                 page: pageParam

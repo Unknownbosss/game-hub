@@ -3,9 +3,13 @@ import React from "react";
 import { BsChevronDown } from "react-icons/bs";
 import usePlatform from "../hooks/usePlatform";
 
-function PlatformSelector({ setSelectedPlatform, selectedPlatform }) {
+function PlatformSelector({ setSelectedPlatform, selectedPlatformID }) {
   const { data, error } = usePlatform();
+  const selectedPlatform = data?.results.find(
+    (p) => p.id === selectedPlatformID
+  );
   if (error) return null;
+
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>

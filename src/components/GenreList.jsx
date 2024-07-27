@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 
-function GenreList({ setSelectedGenre, selectedGenre }) {
+function GenreList({ setSelectedGenre, selectedGenreID }) {
   const { data, isLoading, error } = useGenre("/genres");
 
   if (error) return null;
@@ -35,7 +35,7 @@ function GenreList({ setSelectedGenre, selectedGenre }) {
               <Button
                 whiteSpace="normal"
                 textAlign="left"
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                fontWeight={genre.id === selectedGenreID ? "bold" : "normal"}
                 onClick={() => setSelectedGenre(genre)}
                 variant="link"
                 fontSize="lg"
