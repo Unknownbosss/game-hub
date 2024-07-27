@@ -31,7 +31,7 @@ function App() {
       <Show above="lg">
         <GridItem area="aside" paddingX={5}>
           <GenreList
-            selectedGenre={gameQuery.genreID}
+            selectedGenreID={gameQuery.genreID}
             setSelectedGenre={(genre) =>
               setGameQuery({ ...gameQuery, genreID: genre.id })
             }

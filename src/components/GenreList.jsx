@@ -1,5 +1,5 @@
 import React from "react";
-import useGenre from "../hooks/useGenre";
+import useGenre from "../hooks/useGenres";
 import {
   Button,
   Heading,
