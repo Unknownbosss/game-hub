@@ -1,12 +1,13 @@
-import { useInfiniteQuery, keepPreviousData } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
+import useGameQueryStore from "../store";
 
 
 const apiClient = new APIClient('/games',);
 
-function useGames(gameQuery) {
+function useGames() {
+    const gameQuery = useGameQueryStore(s => s.gameQuery)
     return useInfiniteQuery({
-
         queryKey: ['games', gameQuery],
         queryFn: ({ pageParam = 1 }) =>
             apiClient.getAll({
