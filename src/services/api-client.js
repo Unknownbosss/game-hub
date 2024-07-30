@@ -17,6 +17,10 @@ class APIClient {
         return axiosInstance.get(this.endpoint, { params })
             .then(res => res.data)
     }
+
+    get = (id) => {
+        return axiosInstance.get(this.endpoint + '/' + id).then(res => res.data)
+    }
 }
 
 export default APIClient;
