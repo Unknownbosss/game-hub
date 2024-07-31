@@ -13,7 +13,7 @@ class APIClient {
     }
 
     getAll = (config) => {
-        const params = { ...axiosInstance.params, ...config }
+        const params ={ ...axiosInstance.params, ...config } 
         return axiosInstance.get(this.endpoint, { params })
             .then(res => res.data)
     }
