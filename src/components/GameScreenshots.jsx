@@ -5,11 +5,11 @@ import { Image, SimpleGrid, Spinner } from "@chakra-ui/react";
 function GameScreenshots({ gameID }) {
   const { data, isLoading, error } = useScreenshots(gameID);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return null;
 
   if (error) throw error;
   return (
-    <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={2}>
+    <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={2}>
       {data?.results.map((file) => (
         <Image key={file.id} src={file.image} />
       ))}
