@@ -23,7 +23,7 @@ function HomePage() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <Box paddingLeft={10}>
+        <Box paddingLeft={2}>
           <GameHeading />
           <Flex marginBottom={5}>
             <Box marginRight={5}>
